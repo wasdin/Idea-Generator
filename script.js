@@ -3,10 +3,9 @@
 Array.prototype.randomElement = function () {
     return this[Math.floor(Math.random() * this.length)]
 }
-
+/* The data for lists is defined here. */
 var first_names = new Array();
 first_names[0] = ["Jacob", "Mason", "William", "Jayden", "Noah", "Michael", "Ethan", "Alexander", "Aiden", "Daniel", "Anthony", "Matthew", "Elijah", "Joshua", "Liam", "Andrew", "James", "David", "Benjamin", "Logan", "Christopher", "Joseph", "Jackson", "Gabriel", "Ryan", "Samuel", "John", "Nathan", "Lucas", "Christian", "Jonathan", "Caleb", "Dylan", "Landon", "Isaac", "Gavin", "Brayden", "Tyler", "Luke", "Evan", "Carter", "Nicholas", "Isaiah", "Owen", "Jack", "Jordan", "Brandon", "Wyatt", "Julian", "Aaron", "Sophia", "Isabella", "Emma", "Olivia", "Ava", "Emily", "Abigail", "Madison", "Mia", "Chloe", "Elizabeth", "Ella", "Addison", "Natalie", "Lily", "Grace", "Samantha", "Avery", "Sofia", "Aubrey", "Brooklyn", "Lillian", "Victoria", "Evelyn", "Hannah", "Alexis", "Charlotte", "Zoey", "Leah", "Amelia", "Zoe", "Hailey", "Layla", "Gabriella", "Nevaeh", "Kaylee", "Alyssa", "Anna", "Sarah", "Allison", "Savannah", "Ashley", "Audrey", "Taylor", "Brianna", "Aaliyah", "Riley", "Camila", "Khloe", "Claire"];
-first_names[1] = ["Amy", "Abigail"];
 
 var last_names = new Array();
 last_names[0] = ["Rice", "Smith", "Van Buren", "Washington", "Reese", "Watson", "Park", "Lee", "Cheng"];
@@ -17,6 +16,8 @@ settings[0] = ["Beach", "Arctic tundra", "Waterpark", "Forest", "Theatre", "Matt
 var motivations = new Array();
 motivations[0] = ["Greed", "Revenge", "To be a doctor", "To find long last father", "To win the Olympics", "To become a dog trainer", "To be the world burrito eating champion"];
 
+
+/* This loads on page load and will generate the specified part of the page */
 window.onload = function () {
 	var random_name = first_names[0].randomElement() + " " + last_names[0].randomElement();
 	var random_setting = settings[0].randomElement();
@@ -27,6 +28,7 @@ window.onload = function () {
 	document.getElementById("Motivation").innerHTML=random_motivation;
 }
 
+/* This is run on button press to update based on selections */
 function reload_selections() {
 	var first_name_index = document.getElementById("first_name_selection").selectedIndex;
 	var last_name_index = document.getElementById("last_name_selection").selectedIndex;
