@@ -42,7 +42,7 @@ function reload_selections() {
 	var settings_index = document.getElementById("settings_selection").selectedIndex;
 	var motivations_index = document.getElementById("motivations_selection").selectedIndex;
 
-	alert( document.getElementById("last_name_selection").selectedIndex);
+	//alert( document.getElementById("last_name_selection").selectedIndex);
 
 	var random_name = first_names[first_name_index].randomElement() + " " + last_names[last_name_index].randomElement();
 
