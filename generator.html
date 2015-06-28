@@ -2,15 +2,16 @@
 <head>
 <title>Idea Generator</title>
 <meta name="author" content="Jake Wasdin" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
 	<div id="generated_fields">
-		<p>Name: <span id="Name"></span></p>
-		<p>Setting: <span id="Setting"></span></p>
-		<p>Motivation: <span id="Motivation"></span></p>
+		<p><strong>Name</strong>: <span id="Name"></span></p>
+		<p><strong>Setting</strong>: <span id="Setting"></span></p>
+		<p><strong>Motivation</strong>: <span id="Motivation"></span></p>
 	</div>
 	
 	<p> &nbsp; </p>
@@ -20,25 +21,27 @@
 			<tr>
 				<td>
 				<p>First names</p>
-				<select id="first_name_selection">
-					<option value="0">Top 50 baby in US, 2011</option>
+				<select id="first_name_selection" multiple="multiple">
+					<option value="0">Top 50 baby names in US, 2011</option>
 				</select>
 				<span id="first_names_input"></span>
 				<td>
 				<p>Last names</p>
-				<select id="last_name_selection">
-					<option value="0">Top 50 last names in US, 2010</option>
+				<select id="last_name_selection" multiple="multiple">
+					<option value="0">Top 100 last names in US, 2000</option>					
+					<option value="1">Top 100 last names in Quebec, 2006</option>
+					<option value="2">Top 10 last names in Mexico, 2005</option>
 				</select>
 				</td>
 				<td>
 				<p>Settings</p>
-				<select id="settings_selection">
+				<select id="settings_selection" multiple="multiple">
 					<option value="0">Assorted</option>
 				</select>
 				</td>
 				<td>
 				<p>Motivations</p>
-				<select id="motivations_selection">
+				<select id="motivations_selection" multiple="multiple">
 					<option value="0">Assorted</option>
 				</select> 
 				</td>

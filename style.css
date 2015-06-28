@@ -1,7 +1,9 @@
 td {
-	width: 15em;
+	width: 15em;}
+
+td p {
 	font-weight: bold;}
-	
+
 select {
 	width: 100%; }
 	
