@@ -1,6 +1,6 @@
 /* For getting random elements from array, using a prototype function
    Idea from here: http://stackoverflow.com/a/7120353 */
-Array.prototype.randomElement = function () {
+Array.prototype.random_element = function () {
     return this[Math.floor(Math.random() * this.length)]
 }
 /* The data for lists is defined here. */
@@ -27,30 +27,60 @@ motivations[0] = ["Greed", "Revenge", "To be a doctor", "To find long last fathe
 /* This loads on page load and will generate the specified part of the page */
 window.onload = function () {	
 	/* Setup the initial generated names */
-	var random_name = first_names[0].randomElement() + " " + last_names[0].randomElement();
-	var random_setting = settings[0].randomElement();
-	var random_motivation = motivations[0].randomElement();
+	var random_name = first_names[0].random_element() + " " + last_names[0].random_element();
+	var random_setting = settings[0].random_element();
+	var random_motivation = motivations[0].random_element();
 
 	document.getElementById("Name").innerHTML=random_name;
 	document.getElementById("Setting").innerHTML=random_setting;
 	document.getElementById("Motivation").innerHTML=random_motivation;
 }
 
-
 /* This is run on button press to update based on selections */
 function reload_selections() {
-	var first_name_index = document.getElementById("first_name_selection").selectedIndex;
-	var last_name_index = document.getElementById("last_name_selection").selectedIndex;
-	var settings_index = document.getElementById("settings_selection").selectedIndex;
-	var motivations_index = document.getElementById("motivations_selection").selectedIndex;
+	var first_name_index = get_select_values(document.getElementById("first_name_selection"));
+	var last_name_index = get_select_values(document.getElementById("last_name_selection"));
+	var settings_index = get_select_values(document.getElementById("settings_selection"));
+	var motivations_index = get_select_values(document.getElementById("motivations_selection"));
 
 	//alert( document.getElementById("last_name_selection").selectedIndex);
 
-	var random_name = first_names[first_name_index].randomElement() + " " + last_names[last_name_index].randomElement();
+	var random_name = get_combined(first_names, first_name_index).random_element() + " " + get_combined(last_names, last_name_index).random_element();
 
 	document.getElementById("Name").innerHTML=random_name;
-	document.getElementById("Setting").innerHTML=settings[settings_index].randomElement();
-	document.getElementById("Motivation").innerHTML=motivations[motivations_index].randomElement();
+		
+	document.getElementById("Setting").innerHTML=get_combined(settings, settings_index).random_element();
+	document.getElementById("Motivation").innerHTML=get_combined(motivations, motivations_index).random_element();
 }
 
+/* This will return a new array combining subarrays with given indeces. If only one is passed, one will be returned. */
+function get_combined (array, index) {
+	if (index.length == 1) {
+		return array[index];
+	}
+	
+	else {
+		combined = [];
+		for (var i=0; i<index.length; i++) {
+			combined = combined.concat(array[index[i]]);
+		}
+		return combined;	
+	}
+}
 
+/* This will determine the values selected from a select element. */
+function get_select_values (element) {
+	var result = [];
+	var options = element && element.options;
+	var option;
+
+	for (var i=0; i<options.length; i++) {
+		opt = options[i];
+
+	if (opt.selected) {
+		result.push(opt.value || opt.text);
+		}
+	}
+	
+	return result;
+}
