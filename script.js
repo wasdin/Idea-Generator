@@ -18,11 +18,11 @@ last_names[3] = ["Satō", "Suzuki", "Takahashi", "Tanaka", "Watanabe", "Itō", "
 last_names[4] = ["Wáng", "Lǐ", "Zhāng", "Liú", "Chén", "Yáng", "Huáng", "Zhào", "Wú", "Zhōu", "Xú", "Sūn", "Mǎ", "Zhū", "Hú", "Guō", "Hé", "Gāo", "Lín", "Luó"]; /* Source: https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_Asia */
 
 var settings = new Array();
-settings[0] = ["Beach", "Arctic tundra", "Waterpark", "Forest", "Theatre", "Mattress Factory", "Chicago alleyway", "Quiet Detroit suburb"];
+settings[0] = ["Amazon rainforest", "1930s New York City", "Downtown Tokyo", "Subsaharan Africa", "A remote island", "A fantasy kingdom under siege", "A baseball field", "The Grand Canyon", "Somewhere in the Bermuda Triangle", "Under the sea", "Neptune", "A distant asteroid", "Jupiter", "Saturn", "Mercury", "London during the Blitzkrieg ", "Ancient Rome", "Earth, Year 3040", "Ancient China", "Prehistoric Earth", "Caverns underneath the Earth", "Post-Apocalyptic Tokyo", "Post-Apocalyptic Earth", "A rural farm town", "The city", "At a high school", "1950s United States", "At a mall", "Revolutionary France", "Medieval England", "A parallel universe"];
+
 
 var motivations = new Array();
-motivations[0] = ["Greed", "Revenge", "To be a doctor", "To find long last father", "To win the Olympics", "To become a dog trainer", "To be the world burrito eating champion"];
-
+motivations[0] = ["To win the heart of the one they love", "To find the last unicorn in existence", "To save a prince locked in a tower", "Curiosity", "Love", "Adventure", "Money", "Saving an ailing loved one from death", "Finding their father", "To be the best that no one ever was at…", "Fame", "Destruction", "Conquest", "Seeking Forgiveness", "Recompensing for past wrongs", "Finding love", "Finding mother", "Hatred", "Immortality", "Happiness", "Surviving", "Getting over a recent death", "Getting over grief", "Discovering a new world"];
 
 /* This loads on page load and will generate the specified part of the page */
 window.onload = function () {	
