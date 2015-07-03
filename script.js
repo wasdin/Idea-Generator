@@ -3,6 +3,7 @@
 Array.prototype.random_element = function () {
     return this[Math.floor(Math.random() * this.length)]
 }
+
 /* The data for lists is defined here. */
 var first_names = new Array();
 first_names[0] = ["Jacob", "Mason", "William", "Jayden", "Noah", "Michael", "Ethan", "Alexander", "Aiden", "Daniel", "Anthony", "Matthew", "Elijah", "Joshua", "Liam", "Andrew", "James", "David", "Benjamin", "Logan", "Christopher", "Joseph", "Jackson", "Gabriel", "Ryan", "Samuel", "John", "Nathan", "Lucas", "Christian", "Jonathan", "Caleb", "Dylan", "Landon", "Isaac", "Gavin", "Brayden", "Tyler", "Luke", "Evan", "Carter", "Nicholas", "Isaiah", "Owen", "Jack", "Jordan", "Brandon", "Wyatt", "Julian", "Aaron", "Sophia", "Isabella", "Emma", "Olivia", "Ava", "Emily", "Abigail", "Madison", "Mia", "Chloe", "Elizabeth", "Ella", "Addison", "Natalie", "Lily", "Grace", "Samantha", "Avery", "Sofia", "Aubrey", "Brooklyn", "Lillian", "Victoria", "Evelyn", "Hannah", "Alexis", "Charlotte", "Zoey", "Leah", "Amelia", "Zoe", "Hailey", "Layla", "Gabriella", "Nevaeh", "Kaylee", "Alyssa", "Anna", "Sarah", "Allison", "Savannah", "Ashley", "Audrey", "Taylor", "Brianna", "Aaliyah", "Riley", "Camila", "Khloe", "Claire"];
@@ -72,13 +73,12 @@ function get_combined (array, index) {
 function get_select_values (element) {
 	var result = [];
 	var options = element && element.options;
-	var option;
 
 	for (var i=0; i<options.length; i++) {
-		opt = options[i];
+		option = options[i];
 
-	if (opt.selected) {
-		result.push(opt.value || opt.text);
+	if (option.selected) {
+		result.push(option.value || option.text);
 		}
 	}
 	
